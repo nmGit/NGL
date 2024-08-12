@@ -1,0 +1,6 @@
+[submodule "docs/external/doxygen-awesome-css"]
+	path = docs/external/doxygen-awesome-css
+	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "source/NGL/Simulator/external/ads"]
+	path = source/NGL/Simulator/external/ads
+	url = https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System.git
