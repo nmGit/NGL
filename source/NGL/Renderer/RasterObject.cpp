@@ -1,17 +1,22 @@
 #include "NGL/Renderer/RasterObject.h"
 #include "NGL/Core/Core.h"
 
-const RasterObject::rasterGeometry &RasterObject::GetGeometry()
+namespace NGL
 {
-	return m_geometry;
-}
 
-void RasterObject::SetPos(NGL::point &p)
-{
-	m_position = p;
-}
+	const RasterObject::rasterGeometry &RasterObject::GetGeometry()
+	{
+		return m_geometry;
+	}
 
-const NGL::point &RasterObject::Pos()
-{
-	return m_position;
-}
+	void RasterObject::SetPos(Core::point &p)
+	{
+		m_position = p;
+	}
+
+	const Core::point &RasterObject::Pos()
+	{
+		return m_position;
+	}
+
+}; // namespace NGL::Renderer

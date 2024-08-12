@@ -1,7 +1,16 @@
 #pragma once
 #include <stdint.h>
-namespace NGL
+
+/*!
+ * \defgroup ngl_core Core
+ * \brief Core Resources
+ * \addtogroup ngl_core
+ * \{
+ */
+
+namespace NGL::Core
 {
+	
 	struct point
 	{
 		int x;
@@ -35,3 +44,5 @@ namespace NGL
 		LARGE
 	};
 } // namespace NGL
+
+/// @} // ngl_core

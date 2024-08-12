@@ -2,7 +2,8 @@
 #include "NGL/Core/Font.h"
 
 #include <cstring>
-
+namespace NGL
+{
 Text::Text()
 {
 	
@@ -13,7 +14,7 @@ Text::Text(std::string t)
 {
 }
 
-const NGL::rect &Text::Size()
+const Core::rect &Text::Size()
 {
 	// TODO
 	return m_size;
@@ -22,7 +23,7 @@ const NGL::rect &Text::Size()
 void Text::Rasterize(draw_cb cb, void *user_data)
 {
 	int strlen = m_str.length();
-	NGL::color bg = NGL::color::NONE;
+	Core::color bg = Core::color::NONE;
 	uint8_t font_width = 0;
 	uint8_t font_height = 0;
 	uint16_t x_position = 0;
@@ -32,19 +33,19 @@ void Text::Rasterize(draw_cb cb, void *user_data)
 	for (int i = 0; i < strlen; i++)
 	{
 		uint8_t *letter = nullptr;
-		if (m_font_size == NGL::font_size::MEDIUM)
+		if (m_font_size == Core::font_size::MEDIUM)
 		{
 			letter = get_letter_24x24(m_str[i]);
 			font_width = 24;
 			font_height = 24;
 		}
-		else if (m_font_size == NGL::font_size::SMALL)
+		else if (m_font_size == Core::font_size::SMALL)
 		{
 			letter = get_letter_8x8(m_str[i]);
 			font_width = 8;
 			font_height = 8;
 		}
-		else if (m_font_size == NGL::font_size::LARGE)
+		else if (m_font_size == Core::font_size::LARGE)
 		{
 			letter = get_letter_48x55(m_str[i]);
 			font_width = 48;
@@ -79,3 +80,4 @@ void Text::Rasterize(draw_cb cb, void *user_data)
 	}
 }
 
+} // namespace NGL

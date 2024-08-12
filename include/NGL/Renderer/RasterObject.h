@@ -2,36 +2,40 @@
 
 #include "NGL/Core/Core.h"
 
-class RasterObject
+namespace NGL
 {
-  public:
-	typedef void (*draw_cb)(NGL::area a, uint8_t *buf);
 
-	struct rasterGeometry
+	class RasterObject
 	{
-		NGL::point parent;
-		NGL::point offset;
-	};
+	  public:
+		typedef void (*draw_cb)(Core::area a, uint8_t *buf);
 
-	void SetPos(NGL::point &p);
-	const NGL::point &Pos();
+		struct rasterGeometry
+		{
+			Core::point parent;
+			Core::point offset;
+		};
 
-	virtual void Rasterize(draw_cb cb, void *user_data) = 0;
+		void SetPos(Core::point &p);
+		const Core::point &Pos();
 
-	/*!
+		virtual void Rasterize(draw_cb cb, void *user_data) = 0;
+
+		/*!
     	\brief Set absolute position
     	\param p Upper left corner
 	*/
-	virtual const NGL::rect &Size() = 0;
+		virtual const Core::rect &Size() = 0;
 
-	const rasterGeometry &GetGeometry();
+		const rasterGeometry &GetGeometry();
 
-  protected:
-	rasterGeometry &Geometry();
+	  protected:
+		rasterGeometry &Geometry();
 
-  private:
-	draw_cb m_draw_cb = nullptr;
-	void *m_draw_user_data = nullptr;
-	NGL::point m_position = {0, 0};
-	rasterGeometry m_geometry;
-};
+	  private:
+		draw_cb m_draw_cb = nullptr;
+		void *m_draw_user_data = nullptr;
+		Core::point m_position = {0, 0};
+		rasterGeometry m_geometry;
+	};
+}; // namespace NGL::Renderer

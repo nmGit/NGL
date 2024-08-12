@@ -1,22 +1,21 @@
 #include "NGL/Label.h"
-
-Label::Label(Widget* w, std::string lbl):
-	Widget(w)
+namespace NGL::Widgets
 {
-	
-}
 
-void Label::Redraw()
-{
-	
-}
+	Label::Label(Widget *w, std::string lbl) : Widget(w)
+	{
+	}
 
-void Label::Create()
-{
-	
-}
+	void Label::Redraw()
+	{
+	}
 
-RasterObject *Label::GetRasterObject()
-{
-	return &m_rasterizer;
-}
+	void Label::Create()
+	{
+	}
+
+	RasterObject *Label::GetRasterObject()
+	{
+		return &m_rasterizer;
+	}
+} // namespace NGL::Widgets

@@ -4,6 +4,9 @@
 
 #include <stdint.h>
 
+namespace NGL
+{
+
 class Renderer
 {
   public:
@@ -13,7 +16,7 @@ class Renderer
     	\param width Width of render area
     	\param height Height of render area
 	*/
-	Renderer(Widget &widg, int width, int height);
+	Renderer(NGL::Widgets::Widget &widg, int width, int height);
 
 	/*!
     	\brief Render frame
@@ -24,9 +27,10 @@ class Renderer
 
   protected:
   private:
-	Widget &m_main_widget;
+	NGL::Widgets::Widget &m_main_widget;
 
 	uint8_t *buffer = nullptr;
 	int m_width = 0;
 	int m_height = 0;
 };
+} // namespace NGL

@@ -1,0 +1,32 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Config",
+      "description": "Default Configuration",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/default",
+      "cacheVariables": {
+
+      }
+    },
+    {
+      "name": "Windows Dev",
+      "inherits": "default",
+      "displayName": "Windows Development",
+      "description": "Windows Development",
+      "cacheVariables": {
+        "NGL_BUILD_DEVELOPMENT": {
+          "type": "BOOL",
+          "value": true
+        }
+      }
+    }
+  ]
+}
