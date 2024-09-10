@@ -25,6 +25,7 @@ target_sources(NGL PRIVATE
 ##### Development #####
 if(${NGL_BUILD_DEVELOPMENT})
 	add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/source/NGL/Simulator)
+	
 endif()
 
 target_include_directories(NGL PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)

@@ -4,6 +4,8 @@
 #include <QtWidgets/QLabel>
 #include <QMainWindow>
 
+#include "DockManager.h"
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT;
@@ -14,4 +16,5 @@ public:
 protected:
 private:
 	QLabel m_main_label ;
+	ads::CDockManager* m_dock_manager = nullptr;
 };

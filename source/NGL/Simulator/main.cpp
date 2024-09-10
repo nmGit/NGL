@@ -9,5 +9,6 @@ int main(int argc, char* argv[])
 	QApplication app(argc, argv);
 	MainWindow mw;
 	mw.show();
+	mw.setWindowTitle("Noah's Graphics Library");
 	return app.exec();
 }
